@@ -9,9 +9,10 @@
             id="nombre" 
             name="nombre" 
             placeholder="Tu nombre" 
-            value=""
+            value="<?php echo s($usuario->nombre); ?>"
         >
     </div>
+    <?php echo "<p class='alerta error'>".$alertas['error']['nombre']."</p>"; ?>
     <div class="campo">
         <label for="apellido">Apellido</label>
         <input 
@@ -19,9 +20,10 @@
             id="apellido" 
             name="apellido" 
             placeholder="Tu apellido" 
-            value=""
+            value="<?php echo s($usuario->apellido); ?>"
         >
     </div>
+    <?php echo "<p class='alerta error'>".$alertas['error']['apellido']."</p>"; ?>
     <div class="campo">
         <label for="telefono">Teléfono</label>
         <input 
@@ -29,9 +31,10 @@
             id="telefono" 
             name="telefono" 
             placeholder="Tu Teléfono" 
-            value=""
+            value="<?php echo s($usuario->telefono); ?>"
         >
     </div>
+    <?php echo "<p class='alerta error'>".$alertas['error']['telefono']."</p>"; ?>
     <div class="campo">
         <label for="email">Email</label>
         <input 
@@ -39,9 +42,11 @@
             id="email" 
             name="email" 
             placeholder="Tu Email" 
-            value=""
+            value="<?php echo s($usuario->email); ?>"
         >
     </div>
+    <?php echo "<p class='alerta error'>".$alertas['error']['email']."</p>"; ?>
+    <?php echo "<p class='alerta error'>".$alertas['error']['yaExiste']."</p>"; ?>
     <div class="campo">
         <label for="password">Password</label>
         <input 
@@ -49,9 +54,10 @@
             id="password" 
             name="password" 
             placeholder="Tu Password" 
-            value=""
         >
     </div>
+    <?php echo "<p class='alerta error'>".$alertas['error']['password']."</p>"; ?>
+    <?php echo "<p class='alerta error'>".$alertas['error']['passwordExtension']."</p>"; ?>
     <input type="submit" value="Crear cuenta" class="boton">
 </form>
 

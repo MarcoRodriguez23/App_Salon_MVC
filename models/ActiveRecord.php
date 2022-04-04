@@ -11,8 +11,8 @@ class ActiveRecord {
     protected static $alertas = [];
     
     // Definir la conexión a la BD - includes/database.php
-    public static function setDB($database) {
-        self::$db = $database;
+    public static function setDB($database){
+        self::$db=$database;
     }
 
     public static function setAlerta($tipo, $mensaje) {
@@ -90,16 +90,17 @@ class ActiveRecord {
     }
 
     // Registros - CRUD
-    public function guardar() {
+    public function guardar(){
         $resultado = '';
-        if(!is_null($this->id)) {
-            // actualizar
-            $resultado = $this->actualizar();
-        } else {
-            // Creando un nuevo registro
-            $resultado = $this->crear();
+        if(!is_null($this->id)){
+            //actualizar
+            $resultado=$this->actualizar();
         }
-        return $resultado;
+        else{
+            //crear
+            $resultado=$this->crear();
+        }
+        return $resultado;        
     }
 
     // Todos los registros
@@ -112,6 +113,13 @@ class ActiveRecord {
     // Busca un registro por su id
     public static function find($id) {
         $query = "SELECT * FROM " . static::$tabla  ." WHERE id = ${id}";
+        $resultado = self::consultarSQL($query);
+        return array_shift( $resultado ) ;
+    }
+
+    // Busca un registro por un columna
+    public static function where($columna,$valor) {
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }

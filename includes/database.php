@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect('localhost', 'root', 'upiicsa23', 'appsalon');
+$db = mysqli_connect('localhost', 'root', 'upiicsa23', 'appsalonmvc');
 
 
 if (!$db) {
@@ -9,3 +9,4 @@ if (!$db) {
     echo "error de depuración: " . mysqli_connect_error();
     exit;
 }
+        return $db;
