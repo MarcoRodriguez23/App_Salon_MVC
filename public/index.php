@@ -2,15 +2,16 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\APIController;
 use MVC\Router;
 USE Controllers\LoginController;
+USE Controllers\CitaController;
 
 $router = new Router();
 
 //iniciar Sesion
 $router->get('/',[LoginController::class,'login']);
 $router->post('/',[LoginController::class,'login']);
-
 //cerrar sesión
 $router->get('/logout',[LoginController::class,'logout']);
 
@@ -27,6 +28,12 @@ $router->post('/crear-cuenta',[LoginController::class,'crear']);
 //confirmar cuenta
 $router->get('/confirmar-cuenta',[LoginController::class,'confirmar']);
 $router->get('/mensaje',[LoginController::class,'mensaje']);
+
+//AREA PRIVADA
+$router->get('/cita',[CitaController::class,'index']);
+
+//API DE CITAS
+$router->get('/api/servicios',[APIController::class, 'index']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

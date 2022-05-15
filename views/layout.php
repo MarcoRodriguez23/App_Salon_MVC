@@ -13,6 +13,9 @@
         <div class="app">
             <?php echo $contenido; ?>
         </div>
-    </div>       
+    </div>
+    <?php
+        echo $script ?? '';
+    ?>
 </body>
 </html>
