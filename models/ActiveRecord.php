@@ -124,6 +124,13 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    // CONSULTA PLANA DE SQL, METODO A USAR CUANDO LOS MODELOS NO SON SUFICIENTES
+    public static function SQL($consulta) {
+        $query = $consulta;
+        $resultado = self::consultarSQL($query);
+        return  $resultado;
+    }
+
     // Obtener Registros con cierta cantidad
     public static function get($limite) {
         $query = "SELECT * FROM " . static::$tabla . " LIMIT ${limite}";
@@ -142,6 +149,8 @@ class ActiveRecord {
         $query .= " ) VALUES (' "; 
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
+
+        // return json_encode(['query'=>$query]);
 
         // Resultado de la consulta
         $resultado = self::$db->query($query);

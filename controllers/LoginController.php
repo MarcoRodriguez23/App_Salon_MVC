@@ -34,7 +34,7 @@ class LoginController{
                         $_SESSION['login']=true;
 
                         //redireccionar
-                        if($usuario->admin === 1){
+                        if($usuario->admin === "1"){
                             // echo "es admin";
                             $_SESSION['admin']= $usuario->admin??null;
                             header('Location: /admin');
@@ -61,7 +61,11 @@ class LoginController{
     }
 
     public static function logout(){
-        echo "desde logout";
+        session_start();
+
+        $_SESSION=[];
+
+        header('Location: /');
     }
 
     public static function olvide(Router $router){
