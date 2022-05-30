@@ -3,7 +3,9 @@
 namespace Controllers;
 
 use Model\AdminCita;
+require_once '../models/AdminCita.php';
 use MVC\Router;
+require_once '../Router.php';
 
 class AdminController {
     public static function index(Router $router){

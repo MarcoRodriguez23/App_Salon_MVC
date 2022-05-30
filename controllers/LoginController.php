@@ -3,8 +3,11 @@
 namespace Controllers;
 
 use classes\Email;
+require_once '../classes/Email.php';
 use Model\Usuario;
+require_once '../models/Usuario.php';
 use MVC\Router;
+require_once '../Router.php';
 
 require_once '../classes/email.php';
 

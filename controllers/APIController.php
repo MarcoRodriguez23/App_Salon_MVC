@@ -2,8 +2,11 @@
 namespace Controllers;
 
 use Model\Cita;
+require_once '../models/Cita.php';
 use Model\CitaServicio;
+require_once '../models/CitaServicio.php';
 use Model\Servicio;
+require_once '../models/Servicio.php';
 
 class APIController{
     public static function index (){

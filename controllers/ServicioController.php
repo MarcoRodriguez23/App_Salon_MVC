@@ -3,7 +3,9 @@
 namespace Controllers;
 
 use Model\Servicio;
+require_once '../models/Servicio.php';
 use MVC\Router;
+require_once '../Router.php';
 
 class ServicioController {
     public static function index(Router $router){
