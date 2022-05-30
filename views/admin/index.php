@@ -14,6 +14,14 @@
     </form>
 </div>
 
+<?php 
+
+    if(count($citas)===0){
+        echo "<h2>No hay citas en esta fecha</h2>";
+    }
+
+?>
+
 <div class="citas-admin">
     <ul class="citas">
         <?php $idCita=0; ?>
@@ -44,8 +52,19 @@
 
                 if(esUltimo($actual,$proximo)){
                     echo "<p class='total'>Total: <span> $".$totalPrecio."</span></p>";
+                    echo '
+                    <form action="/api/eliminar" method="POST">
+                        <input type="hidden" name="id" value="'.$cita->id.'">
+                        <input type="submit" class="boton-eliminar" value="Eliminar">
+                    </form>
+                    ';
                 }
             ?>
+                
         <?php endforeach; ?>
     </ul>
 </div>
+
+<?php
+    $script = "<script src='/build/js/buscador.js'></script>"
+?>
