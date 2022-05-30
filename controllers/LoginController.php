@@ -9,7 +9,6 @@ require_once '../models/Usuario.php';
 use MVC\Router;
 require_once '../Router.php';
 
-require_once '../classes/email.php';
 
 class LoginController{
     public static function login(Router $router){
