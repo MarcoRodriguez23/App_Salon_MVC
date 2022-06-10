@@ -24,18 +24,17 @@ class Email {
 
         //Configurando SMTP
         $mail->isSMTP();
-        $mail->Host='smtp.mailtrap.io';
-        $mail->SMTPAuth= true;
-        $mail->Username='f8f5444957e76d';
-        $mail->Password='0642cad10af248';
-        $mail->SMTPSecure='tls';
-        $mail->Port='2525';
+        $mail->Host = 'smtp.mailtrap.io';
+        $mail->SMTPAuth = true;
+        $mail->Port = 2525;
+        $mail->Username = 'c77b3f1fb14e4b';
+        $mail->Password = '5c18ff20bbbf7a';
 
         //configurando el contenido  del Email
         //quien lo envia
         $mail->setFrom('cuentas@appsalon.com');
         //A donde va
-        $mail->addAddress('cuentas@appsalon.com','AppSalon.com');
+        $mail->addAddress($this->email);
         $mail->Subject='Confirma tu cuenta';
         //habilitar html
         $mail->isHTML(true);
@@ -63,18 +62,17 @@ class Email {
 
        //Configurando SMTP
        $mail->isSMTP();
-       $mail->Host='smtp.mailtrap.io';
-       $mail->SMTPAuth= true;
-       $mail->Username='f8f5444957e76d';
-       $mail->Password='0642cad10af248';
-       $mail->SMTPSecure='tls';
-       $mail->Port='2525';
+        $mail->Host = 'smtp.mailtrap.io';
+        $mail->SMTPAuth = true;
+        $mail->Port = 2525;
+        $mail->Username = 'c77b3f1fb14e4b';
+        $mail->Password = '5c18ff20bbbf7a';
 
        //configurando el contenido  del Email
        //quien lo envia
        $mail->setFrom('cuentas@appsalon.com');
        //A donde va
-       $mail->addAddress('cuentas@appsalon.com','AppSalon.com');
+       $mail->addAddress($this->email);
        $mail->Subject='Reestablece tu password';
        //habilitar html
        $mail->isHTML(true);
