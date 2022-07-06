@@ -120,23 +120,24 @@ function mostrarServicios(servicios){
     servicios.forEach(servicio => {
         const {id, nombre, precio} = servicio
 
-        const nombreServicio = document.createElement('P');
-        nombreServicio.classList.add('nombre-servicio');
-        nombreServicio.textContent = nombre;
+        // const nombreServicio = document.createElement('P');
+        // nombreServicio.classList.add('nombre-servicio');
+        // nombreServicio.textContent = nombre;
 
-        const precioServicio = document.createElement('P');
-        precioServicio.classList.add('precio-servicio');
-        precioServicio.textContent = `$ ${precio}`;
+        // const precioServicio = document.createElement('P');
+        // precioServicio.classList.add('precio-servicio');
+        // precioServicio.textContent = `$ ${precio}`;
 
         const servicioDiv = document.createElement('DIV');
-        servicioDiv.classList.add('servicio');
-        servicioDiv.dataset.idServicio = id;
-        servicioDiv.onclick = function () {
-            agregarServicio(servicio);
-        }
+        servicioDiv.innerHTML= `<p>Servicio</p>`;
+        // servicioDiv.classList.add('servicio');
+        // servicioDiv.dataset.idServicio = id;
+        // servicioDiv.onclick = function () {
+        //     agregarServicio(servicio);
+        // }
 
-        servicioDiv.appendChild(nombreServicio);
-        servicioDiv.appendChild(precioServicio);
+        // servicioDiv.appendChild(nombreServicio);
+        // servicioDiv.appendChild(precioServicio);
 
         document.querySelector('#servicios').appendChild(servicioDiv);
 
@@ -346,8 +347,7 @@ async function reservarCita(){
     console.log([...datos]);
    
     try {
-        const server = window.location.origin;
-        const url = `${server}/api/citas`
+        const url = 'https://serene-river-49406.herokuapp.com//api/citas'
         const respuesta = await fetch(url,{
             method: 'POST',
             body: datos
