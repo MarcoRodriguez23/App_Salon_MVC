@@ -346,7 +346,8 @@ async function reservarCita(){
     console.log([...datos]);
    
     try {
-        const url = 'https://serene-river-49406.herokuapp.com//api/citas'
+        const server = window.location.origin;
+        const url = `${server}/api/citas`
         const respuesta = await fetch(url,{
             method: 'POST',
             body: datos
